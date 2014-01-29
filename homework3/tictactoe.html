@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<link href="table.css" rel="stylesheet" type="text/css"  />
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script> 
+	<script>
+	var board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+];
+	
+	var player=0;
+	
+	
+	
+	
+	var turn = {
+        number : 0,
+        current_player_color : function() {
+                if (this.number % 2 === 0) {
+                        return 1;
+                }
+                else {
+                        return 2;
+                }
+        },
+        change_turn : function(){
+                this.number += 1;
+        }
+};
+
+	
+	$(document).ready(function(){
+        $(this).removeClass("result");
+        $(".cell").hover(function () {
+                $(this).addClass("hover");
+        }, function () {
+                $(this).removeClass("hover");
+        });
+
+        
+        $('.cell').click(function(){
+                
+                if (check_cell(this) === 0 && player === 0) {
+                        
+                        change_cell(this);
+                        
+                        check_winner();
+                }
+        });
+});
+	
+	function check_cell(cell) {
+        var row = $(cell).data("row");
+        var col = $(cell).data("col");
+        return(board[row][col]);
+}
+	
+	function change_cell(cell) {
+       
+        var row = $(cell).data("row");
+        var col = $(cell).data("col");
+        board[row][col] = turn.current_player_color();
+        if (turn.current_player_color() == 1){
+                
+                $(".cell").click(function () {
+                        $(this).removeClass("hover");
+                });
+                $(cell).addClass('x');
+        }
+        else {
+                $(cell).addClass('o');
+        }
+}
+	
+	function check_rows() {
+        for (i = 0; i < board.length; i++) {
+                var same = true;
+                for (j = 0; j < board[i].length; j++) {
+                        if (board[i][j] === 0 || board[i][j] !== board[i][0]) {
+                                same = false;
+                        }
+                }
+                if (same) {
+                        return same;
+                }
+        }
+}
+	function check_cols() {
+        for (i = 0; i < board.length; i++) {
+                var same = true;
+                for (j = 0; j < board[i].length; j++) {
+                        if (board[j][i] === 0 || board[j][i] !== board[0][i]) {
+                                same = false;
+                        }
+                }
+                if (same) {
+                        return same;
+                }
+        }
+}
+	
+	function check_diag() {
+        var same = true;
+        for (i = 0; i < board.length; i++) {
+                if (board[i][i] === 0 || board[i][i] !== board[0][0]) {
+                        same = false;
+                }
+        }
+        if (same) {
+                return same;
+        }
+        same = true;
+        for (i = 0; i < board.length; i++) {
+                if (board[i][2 - i] === 0 || board[i][2 - i] !== board[0][2]) {
+                        same = false;
+                }
+        }
+        if (same) {
+                return same;
+        }
+}
+	function check_tie() {
+        var flattened_board = Array.prototype.concat.apply([], board);
+        for(i = 0; i < flattened_board.length; i++){
+                if(flattened_board[i] === 0){
+                        console.log(i);
+                        return false;
+                }
+        }
+        return true;
+}
+
+	function check_winner() {
+        if (check_rows() === true || check_cols() === true || check_diag() === true) {
+                player = turn.current_player_color();
+				var winner ="X";
+				if(player==1)
+				{
+				winner = "X";
+				}
+                else
+				{
+				winner ="O";
+				}
+				
+			   
+			   
+                end_game(winner + " wins");
+        }
+        else if (check_tie() === true) {
+                end_game("It's a tie...");
+        }
+        else {
+                turn.change_turn();
+        }
+	}
+
+		function end_game(message) {
+		$("#result").addClass('result');
+        alert(message);
+		
+        location.reload();
+		
+	}
+	
+	 </script>
+</head>
+<body>
+  <div class="nav">
+   <ul class="nav">
+         <li><a href="tictactoe.html">Play TicTacToe!!!</a></li> 
+		 <li><a href="faq.html">FAQ</a></li> 
+		 <li><a href="register.html">Registration Form</a></li>       
+		 <li><a href="contact.html">Feedback Form</a></li>
+		      
+	
+      </ul>
+  </div>
+ <div id ="result" style="width:220px;height:220px;">
+	
+	</div>
+  <div id="content" style="padding: 100px; width:500px; height: 300px; margin:auto">
+   
+   <div class="game">
+	
+	
+	<table cellpadding="0" cellspacing="0" border="1" align="center" style="position: relative">
+		<tbody>
+				<tr class="row">
+					<td id="00" class="cell" data-row="0" data-col="0">&nbsp;</td>
+					<td id="01" class="cell" data-row="0" data-col="1">&nbsp;</td>
+					<td id="02" class="cell" data-row="0" data-col="2">&nbsp;</td>
+				</tr>
+				<tr class="row">
+					<td id="10" class="cell" data-row="1" data-col="0">&nbsp;</td>
+					<td id="11" class="cell" data-row="1" data-col="1">&nbsp;</td>
+					<td id="12" class="cell" data-row="1" data-col="2">&nbsp;</td>
+				</tr>
+				<tr class="row">
+					<td id="20" class="cell" data-row="2" data-col="0">&nbsp;</td>
+					<td id="21" class="cell" data-row="2" data-col="1">&nbsp;</td>
+					<td id="22" class="cell" data-row="2" data-col="2">&nbsp;</td>
+				</tr>
+		</tbody>
+	</table>
+	
+	</div>
+	
+	</div>
+	
+</body>
+</html>

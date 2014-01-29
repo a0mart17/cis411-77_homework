@@ -1,0 +1,72 @@
+body
+{
+background-image: url('body.png');
+}
+#content
+{
+margin-top: 10px;
+border-radius: 15px;
+height: 450px;
+width: 30px;
+background-color: #33CCFF;
+}
+
+.nav ul 
+ {
+     list-style-type: none;	
+	color: white;
+}
+.nav li
+{
+border-radius:5px;
+margin-bottom: 10px;
+background-color: #00CCFF;
+display: inline;
+padding:9px;
+text-decoration: none; 
+font-size: 20pt;
+
+}
+.nav a
+{
+text-decoration: none; 
+}
+a:hover, a:focus, a:active 
+{ 
+	
+	border: 2px solid #0099FF;
+	text-decoration: none; 
+	color: white;
+}
+
+table
+{
+background-color:white;
+}
+.result
+{
+background-image: url('penguin.png');
+background-size: 100%;
+
+margin: auto;
+}
+
+.cell {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+
+}
+
+.hover {
+  background-color: #99EBFF;
+
+}
+
+.x {
+  background-image: url('x.png');
+}
+
+.o {
+  background-image: url('o.png');
+}
