@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MvcMovie")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
+<<<<<<< HEAD
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("MvcMovie")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+=======
+[assembly: AssemblyCompany("Hewlett-Packard")]
+[assembly: AssemblyProduct("MvcMovie")]
+[assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2014")]
+>>>>>>> 7610d3f03b86ab3d4ad088058067808d8dd0e41a
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +26,11 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
+<<<<<<< HEAD
 [assembly: Guid("c2b9f03f-6cd8-4104-9275-6864fab32277")]
+=======
+[assembly: Guid("7f6323c6-8756-403e-b11c-dde1dc43784a")]
+>>>>>>> 7610d3f03b86ab3d4ad088058067808d8dd0e41a
 
 // Version information for an assembly consists of the following four values:
 //
