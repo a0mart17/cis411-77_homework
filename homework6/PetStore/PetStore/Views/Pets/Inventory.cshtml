@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<PetStore.Models.Pet>
+
+@{
+    ViewBag.Title = "Inventory";
+}
+
+<h2>Inventory</h2>
+
+
+
+  
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-2">
+            
+                <img src=@Html.DisplayFor(modelItem => item.PhotoUrl) width="100" height="100" alt="" class="img-rounded" />
+         </div>
+            <div class="col-md-10">
+                <p>
+                    @Html.DisplayFor(modelItem => item.Name)     |
+                    @Html.ActionLink("View more about me", "More", new { id = item.ID })
+                </p>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+                
+                
+            </div>
+        </div>
+        <br/>
+        <br/>
+    }
+
+
+
+
+
