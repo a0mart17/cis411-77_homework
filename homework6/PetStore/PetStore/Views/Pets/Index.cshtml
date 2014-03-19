@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<PetStore.Models.Pet>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage";
 }
 
-<h2>Index</h2>
+<h2>Manage</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -35,9 +35,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ListPrice)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhotoUrl)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -67,9 +65,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.ListPrice)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhotoUrl)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
