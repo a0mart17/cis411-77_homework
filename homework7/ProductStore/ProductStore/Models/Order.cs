@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductStore.Models
 {
-    public class Product
+    public class Order
     {
-        [ScaffoldColumn(false)]
         public int Id { get; set; }
         [Required]
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public decimal ActualCost { get; set; }
+        public string Customer { get; set; }
+
+        // Navigation property
+        public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
