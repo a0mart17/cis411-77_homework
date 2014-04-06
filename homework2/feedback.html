@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+
+<head>
+
+
+ 
+   <title>Feedback</title>
+    
+   <link rel="stylesheet" type="text/css" href="style.css" />
+   <script>
+   
+   function ValidateFeedbackForm(form){
+  if (form.name.value == ""){
+    alert("Please enter your name.");
+    form.name.focus();
+    return (false);
+    }
+	
+	var x = form.email.value;
+	var atpos=x.indexOf("@");
+	var dotpos=x.lastIndexOf(".");
+   if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+	{
+	alert("Not a valid e-mail address");
+	form.email.focus();
+	return false;
+	}
+	
+  
+
+   if (form.comments.value.trim() == ""){
+		alert("Please enter your comments");
+		form.comments.focus();
+        return false
+    }
+	
+  return (true);
+    }
+   
+   </script>
+	
+   
+	 
+</head>
+
+<body>
+  <div class="nav">
+   <ul class="nav">
+         <li><a href="calculator.html">Calculator</a></li> 
+		 <li><a href="registration.html">Registration Form</a></li>       
+		 <li><a href="feedback.html">Feedback Form</a></li>
+		 <li><a href="faq.html">FAQ</a></li>      
+	
+      </ul>
+  </div>
+
+  
+  <div id="content" style="padding: 120px; width:800px; margin:0px auto;">
+    <h2>Send your feedback</h2>
+	<form method="post"  action="#" name="feedback" onsubmit="return ValidateFeedbackForm(this);">
+    <label class="label">Name: </label><input type="text" size="50" name="name">
+	<label class="label">E-mail:  </label><input type="text" size="50" name="email" >
+	<label class="label">Feedback: </label>
+	
+	<textarea name="comments" rows="5" cols="50"> 
+	</textarea>
+    </br>
+    </br>	
+    <input type="submit" value="Submit" name="submit">
+    
+	</form>
+	</div>
+  
+</body>
+<html>

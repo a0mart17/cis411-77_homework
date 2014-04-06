@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+
+<head>
+
+
+ 
+   <title>My Calculator</title>
+    
+   <link rel="stylesheet" type="text/css" href="style.css" />
+   
+   <script type='text/javascript'>
+   function nada() {
+    var display = document.getElementById("display");
+    display.value += "0";
+}
+
+function one() {
+    var display = document.getElementById("display");
+    display.value += "1"
+}
+
+function two() {
+    var display = document.getElementById("display");
+    display.value += "2";
+}
+
+function three() {
+    var display = document.getElementById("display");
+    display.value += "3";
+}
+
+function four() {
+    var display = document.getElementById("display");
+    display.value += "4";
+}
+
+function five() {
+    var display = document.getElementById("display");
+    display.value += "5";
+}
+
+function six() {
+    var display = document.getElementById("display");
+    display.value += "6";
+}
+
+function seven() {
+    var display = document.getElementById("display");
+    display.value += "7";
+}
+
+function eight() {
+    var display = document.getElementById("display");
+    display.value += "8";
+}
+
+function nine() {
+    var display = document.getElementById("display");
+    display.value += "9";
+}
+
+function decimal() {
+    var display = document.getElementById("display");
+    display.value += ".";
+}
+function pct() {
+    var display = document.getElementById("display");
+    display.value = (display.value)/100;
+}
+function sign() {
+	var display = document.getElementById("display");
+	if(display.value>0)
+    {display.value = -Math.abs(display.value);}
+	else
+	{display.value = Math.abs(display.value);}
+	
+	
+}
+function add() {
+    var display = document.getElementById("display");
+	if(display.value!='')
+    {display.value += "+";}
+}
+
+function minus() {
+    var display = document.getElementById("display");
+	if(display.value!='')
+    {display.value += "-";}
+}
+
+function mult() {
+    var display = document.getElementById("display");
+	if(display.value!='')
+	{display.value += "*";}
+}
+
+function divide() {
+    var display = document.getElementById("display");
+	if(display.value!='')
+    {display.value += "/";}
+}
+
+function equal() {
+    var display = document.getElementById("display");
+    display.value = eval(display.value);
+	
+}
+   
+   </script>
+   
+	 
+</head>
+
+<body>
+  <div class="nav">
+   <ul class="nav">
+         <li><a href="calculator.html">Calculator</a></li> 
+		 <li><a href="registration.html">Registration Form</a></li>       
+		 <li><a href="feedback.html">Feedback Form</a></li>
+		 <li><a href="faq.html">FAQ</a></li>      
+	
+      </ul>
+  </div>
+
+  <div id="content" style="padding: 120px; width:800px; margin:0px auto;">
+  <table class="calc" align="center" style="position: relative">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="display" class="display">                
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input class="button" type="button" id="clear" value="CE" onclick="display.value=''">
+            </td>
+            <td>
+                <input class="button" type="button" id="sign" value="+/-" onclick="sign()">
+            </td>
+            <td>
+                <input class="button" type="button" id="%" value="%" onclick="pct()">
+            </td>            
+        </tr>
+        <tr>
+            <td>
+                <input class="button" type="button" id="7" value="7" onclick="seven()">
+            </td>
+            <td>
+                <input class="button" type="button" id="8" value="8" onclick="eight()">
+            </td>
+            <td>
+                <input class="button" type="button" id="9" value="9" onclick="nine()">
+            </td>
+            <td>
+                <input class="button" type="button" id="/" value="&divide" onclick="divide()">
+            </td>
+            <tr>
+                <td>
+                    <input class="button" type="button" id="4" value="4" onclick="four()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="5" value="5" onclick="five()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="6" value="6" onclick="six()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="*" value="*" onclick="mult()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="button" type="button" id="1" value="1" onclick="one()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="2" value="2" onclick="two()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="3" value="3" onclick="three()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="-" value="-" onclick="minus()">
+                </td>
+            </tr>
+			<tr>
+                <td>
+                    <input class="button" type="button" id="0" value="0" onclick="nada()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="." value="." onclick="decimal()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="=" value="=" onclick="equal()">
+                </td>
+                <td>
+                    <input class="button" type="button" id="+" value="+" onclick="add()">
+                </td>
+            </tr>
+    </table>
+	</div>
+</body>
+<html>
