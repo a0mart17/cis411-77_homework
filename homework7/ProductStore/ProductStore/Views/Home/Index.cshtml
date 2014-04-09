@@ -4,7 +4,7 @@
 
       function AppViewModel() {
           var self = this;
-          self.loggedIn = @(Request.IsAuthenticated ? "true" : "false");
+          self.loggedIn = @(Request.IsAuthenticated ? "true" : "false")
 
         self.products = ko.observableArray();
         self.cart = ko.observableArray();
